@@ -1,6 +1,5 @@
-#include <iostream>
+#include <cstdio>
 #include <map>
-using namespace std;
 
 map<unsigned long long, unsigned long long> byteValue;
 
