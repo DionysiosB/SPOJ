@@ -1,5 +1,4 @@
-#include <iostream>
-using namespace std;
+#include <cstdio>
 
 int main(){
     size_t N; scanf("%zd",&N);
