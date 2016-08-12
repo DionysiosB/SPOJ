@@ -1,5 +1,4 @@
-#include <iostream>
-using namespace std;
+#include <cstdio>
 
 size_t reverseNumber(size_t n){
     
