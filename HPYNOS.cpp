@@ -1,6 +1,5 @@
-#include <iostream>
+include <cstdio>
 #include <set>
-using namespace std;
 
 unsigned long transform(unsigned long input){
     unsigned long output = 0, lastDigit = 0;
@@ -13,7 +12,7 @@ unsigned long transform(unsigned long input){
 
 int main(){
 
-    unsigned long n = 0, count = 0;
+    unsigned long n(0), count(0);
     set<unsigned long> numberSet;
 
     scanf("%lu\n", &n);
