@@ -1,5 +1,4 @@
-#include <iostream>
-using namespace std;
+#include <cstdio>
 
 int main(){
     int numCases; scanf("%d",&numCases);
