@@ -1,9 +1,8 @@
 #include <iostream>
-using namespace std;
 
 int main(int argc, char *argv[]){
     size_t inputNumber, factor, output;
-    int N; cin >> N;
+    int N; std::cin >> N;
 
     for(size_t k = 0; k < N ; k++){
         cin >> inputNumber;
@@ -12,7 +11,7 @@ int main(int argc, char *argv[]){
             output += inputNumber / factor;
             factor *= 5;
         }
-        cout << output << endl;
+        std::cout << output << std::endl;
     }
     return 0;
 }
