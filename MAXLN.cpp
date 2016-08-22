@@ -1,5 +1,4 @@
-#include <iostream>
-using namespace std;
+#include <cstdio>
 
 int main(){
     unsigned numCases = 0; scanf("%u\n",&numCases);
