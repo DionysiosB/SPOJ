@@ -1,5 +1,4 @@
-#include <iostream>
-using namespace std;
+#include <cstdio>
 
 unsigned long long nonIsomorphicTrees(int N){
     unsigned long long output = 1;
