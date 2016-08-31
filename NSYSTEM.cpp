@@ -1,6 +1,5 @@
 #include <iostream>
 #include <cstring>
-using namespace std;
 
 int convertDecimal(string input){
    int pos = 0, output = 0;
@@ -50,10 +49,10 @@ string convertMCXI(int input){
 int main(){
     int numCases;scanf("%d\n",&numCases);
     while(numCases--){
-        string temp; getline(cin, temp);
+        string temp; getline(std::cin, temp);
         int separator = temp.find(' ');
         string first = temp.substr(0,separator), second = temp.substr(separator+1);
-        cout << convertMCXI(convertDecimal(first) + convertDecimal(second)) << endl;
+        std::cout << convertMCXI(convertDecimal(first) + convertDecimal(second)) << std::endl;
     }
     return 0;
 }
