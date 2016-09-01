@@ -1,27 +1,33 @@
-#include <iostream>
-using namespace std;
+#include <cstdio>
+#include <cmath>
+#include <vector>
 
-int main(int argc, char *argv[]){
 
-    size_t N; scanf("%zd",&N);
+bool isPrime(long x){
+    int ans(true);
+    for(long p = 2; p <= sqrt(x); p++){if(x % p == 0){ans = false; break;}}
+    return ans;
+}
 
-    for(size_t k = 0; k < N ; k++){
 
-        size_t lowerBound, upperBound;
-        scanf("%zd %zd", &lowerBound , &upperBound);
-        bool *primes = new bool[upperBound-lowerBound+1];
 
-        primes[0] = 0; primes[1] = 0;
-        for(size_t m = lowerBound; m <= upperBound ; m++){primes[m - lowerBound] = 1;}
-        for(size_t m = lowerBound; m <= upperBound ; m++){
-            for(size_t u = 2; u < m ; u++){
-                if( m % u == 0){primes[m-lowerBound] = 0; break;}
-            }
+int main(){
+
+    long primeValues[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97};
+    std::vector<long> smallPrimes(primeValues, primeValues + sizeof(primeValues) / sizeof(long));
+
+    int t; scanf("%d\n", &t);
+    while(t--){
+        long a, b; scanf("%ld %ld\n", &a, &b);
+        if(a <= 1){a = 2;}
+        for(long p = a; p <= b; p++){
+            bool divisible = 0;
+            for(size_t u = 0; u < smallPrimes.size(); u++){if(p > smallPrimes[u] && p % smallPrimes[u] == 0){divisible = 1; break;}}
+            if(divisible || !isPrime(p)){continue;} 
+            printf("%ld\n", p);
         }
-
-        for(size_t m = lowerBound ; m <= upperBound ; m++){if(primes[m - lowerBound]){printf("%zd\n",m);}}
-        printf("\n");
-
+        puts("");
     }
+
     return 0;
 }
